@@ -7,6 +7,7 @@ export default function TodoList({ todos, toggleTodo }) {
       {todos.map(todo => {
         return <Todo key={todo.id} todo={todo} toggleTodo={toggleTodo} />
       })}
+      <h4>{todos.filter(todo => !todo.complete).length} left to do</h4>
     </div>
   )
 }

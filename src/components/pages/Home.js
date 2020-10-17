@@ -45,7 +45,7 @@ export default function Home() {
         <button onClick={addTodoHandler}>Add Todo</button>
       </div> 
       <TodoList todos={todos} toggleTodo={toggleTodo} />
-      <button onClick={clearTodosHandler}>Clear Complete</button>
+      <button onClick={clearTodosHandler} className="clearBtn">Clear Complete</button>
       <h6>{todos.filter(todo => !todo.complete).length} left to do</h6>
     </div>
   )

@@ -6,9 +6,9 @@
 
 .App {
   font-family: Arial, Helvetica, sans-serif;
-  /* background: #f2f2f2; */
-  background: rgb(197, 219, 230);
-  color: #231F20;
+  background:#fff;
+  /* color: #005B96; */
+  color: #231F20; 
   min-height: 100vh;
   width: 100%;
   text-align: center;
@@ -16,7 +16,7 @@
 
 .header {
   min-height: 10vh;
-  background: rgba(0, 0, 0, 0.808);
+  background: #011F4B;
   color: #fff;
   text-align: center;
   padding: 10px;
@@ -47,25 +47,86 @@ nav ul li:hover {
 }
 
 .addTodo {
-  width: 60%;
-  margin: 0 auto;
-  padding: 10px 0;
+  width: 40%;
+  margin: 5rem auto;
   display: flex;
 }
 
 input[type="text"] {
   flex: 10;
   padding: 10px;
+  text-align: center;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border: none;
+  background: #011f4b;
+  color: #fff;
+  outline: none;
 }
 
 .addTodo button {
   flex: 2;
+  background: #011F4B;
+  color: #fff;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.addTodo button:hover {
+  background: #011f4bd7;
+}
+
+.clearBtn {
+  background: #011F4B;
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .todoList {
-  width: 60%;
-  border: 1px solid #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #011f4b;
+  color: #fff;
+  min-height: 200px;
+  width: 40%;
+  border-radius: 2rem;
   margin: 10px auto;
+  padding: 5rem;
+}
+
+.todo {
+  background-color: #fff;
+  color: #011f4b;
+  border-radius: 1rem;
+  margin: 1rem auto;
+  padding: .5rem 1.5rem;
+  width: 80%;
+  position: relative;
+}
+
+.todo input[type="checkbox"] {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.x {
+  display: inline-block;
+  position: absolute;
+  width: 1rem;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%) scale(1.2);
+  cursor: pointer;
 }
 
 .line {

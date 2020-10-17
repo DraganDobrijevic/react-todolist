@@ -7,11 +7,12 @@ export default function Todo({ todo, toggleTodo }) {
   }
 
   return (
-    <div>
-      <label className="todo">
-        <input type="checkbox" checked={todo.complete} onChange={hendleTodoClick} />
+    <div className="todoAndCheckbox">
+      <div className="todo">
+        <div className="x">X</div>
         {todo.name}
-      </label>        
+        <input type="checkbox" checked={todo.complete} onChange={hendleTodoClick} />
+      </div> 
     </div>
   )
 }
