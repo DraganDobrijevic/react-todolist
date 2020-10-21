@@ -14,13 +14,19 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
+    console.log("snima");
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
   }, [todos])
 
-  const toggleTodo = (id) => {
+  const toggleTodo = id => {
     const newTodos = [...todos]
     const todo = newTodos.find(todo => todo.id === id)
     todo.complete = !todo.complete
+    setTodos(newTodos)
+  }
+
+  const deleteTodo = id => {
+    const newTodos = todos.filter(todo => todo.id !== id)
     setTodos(newTodos)
   }
 
@@ -44,7 +50,7 @@ export default function Home() {
         <input ref={todoNameRef} type="text"/>
         <button onClick={addTodoHandler}>Add Todo</button>
       </div> 
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
       <button onClick={clearTodosHandler} className="clearBtn">Clear Complete</button>
       <h6>{todos.filter(todo => !todo.complete).length} left to do</h6>
     </div>

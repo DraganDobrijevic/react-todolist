@@ -5,6 +5,7 @@ import Home from './components/pages/Home'
 import About from './components/pages/About'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Wave from './components/Wave'
+import Clock from './components/Clock'
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
             <About />
           </Route>
         </Switch>
-        <Wave/>
+        <Clock />
+        <Wave />
       </div>
     </Router>
   );

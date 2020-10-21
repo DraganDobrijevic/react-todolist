@@ -1,13 +1,30 @@
 import React from 'react'
 import Todo from './Todo'
 
-export default function TodoList({ todos, toggleTodo }) {
+import {
+  TransitionGroup,
+  CSSTransition,
+} from 'react-transition-group';
+
+export default function TodoList({ todos, toggleTodo, deleteTodo }) {
   return (
     <div className="todoList">
-      {todos.map(todo => {
-        return <Todo key={todo.id} todo={todo} toggleTodo={toggleTodo} />
-      })}
-      <h4>{todos.filter(todo => !todo.complete).length} left to do</h4>
+    <TransitionGroup>
+      {todos.map(todo => (
+        <CSSTransition
+          key={todo.id}
+          timeout={500}
+          classNames="todoAnim"
+          todo={todo} 
+          deleteTodo={deleteTodo} 
+          toggleTodo={toggleTodo}
+        >
+          <Todo />
+          {/* <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} toggleTodo={toggleTodo}/> */}
+        </CSSTransition>
+      ))}
+    </TransitionGroup>
+    <h4>{todos.filter(todo => !todo.complete).length} left to do</h4>
     </div>
   )
 }

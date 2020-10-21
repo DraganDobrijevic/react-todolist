@@ -36,10 +36,11 @@ nav ul {
 
 nav ul li {
   color: #fff;
+  transition: all 200ms ease-in;
 }
 
 nav ul li:hover {
-  color: rgb(230, 167, 167);
+  color: rgb(66, 160, 184);
 }
 
 .textDecorationNone {
@@ -73,6 +74,7 @@ input[type="text"] {
   border: none;
   outline: none;
   cursor: pointer;
+  transition: all 200ms ease-in;
 }
 
 .addTodo button:hover {
@@ -83,9 +85,16 @@ input[type="text"] {
   background: #011F4B;
   color: #fff;
   border-radius: 1rem;
+  padding: .4rem 1rem;
   border: none;
   outline: none;
   cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+.clearBtn:hover {
+  background: #011f4bd7;
+  color: #fff;  
 }
 
 .todoList {
@@ -127,6 +136,11 @@ input[type="text"] {
   top: 50%;
   transform: translateY(-50%) scale(1.2);
   cursor: pointer;
+}
+
+.x:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: rgb(151, 28, 28);
 }
 
 .line {
@@ -190,3 +204,26 @@ input[type="text"] {
     transform: translateX(-50%) translateZ(0) scaleY(1);
   }
 }
+
+.todoAnim-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.todoAnim-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 500ms ease-in;
+}
+
+.todoAnim-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.todoAnim-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 500ms ease-in;
+}
+
