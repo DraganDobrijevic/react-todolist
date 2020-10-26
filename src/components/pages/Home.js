@@ -39,20 +39,13 @@ export default function Home() {
     todoNameRef.current.value = null
   }
 
-  const clearTodosHandler = () => {
-    const newTodos = todos.filter(todo => !todo.complete)
-    setTodos(newTodos)
-  }
-
   return (
     <div>
       <div className="addTodo">
         <input ref={todoNameRef} type="text"/>
         <button onClick={addTodoHandler}>Add Todo</button>
       </div> 
-      <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
-      <button onClick={clearTodosHandler} className="clearBtn">Clear Complete</button>
-      <h6>{todos.filter(todo => !todo.complete).length} left to do</h6>
+      <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} setTodos={setTodos} />
     </div>
   )
 }

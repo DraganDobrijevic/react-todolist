@@ -84,17 +84,19 @@ input[type="text"] {
 .clearBtn {
   background: #011F4B;
   color: #fff;
+  border: 2px solid #fff;
   border-radius: 1rem;
+  margin-top: 2rem;
   padding: .4rem 1rem;
-  border: none;
   outline: none;
   cursor: pointer;
   transition: all 200ms ease-in;
 }
 
 .clearBtn:hover {
-  background: #011f4bd7;
-  color: #fff;  
+  border: 2px solid #011F4B;
+  background: #fff;
+  color: #011F4B;  
 }
 
 .todoList {
@@ -141,6 +143,13 @@ input[type="text"] {
 .x:hover {
   transform: translateY(-50%) scale(1.1);
   color: rgb(151, 28, 28);
+}
+
+.clock {
+  position: absolute;
+  bottom: 5rem;
+  width: 100%;
+  text-align: center;
 }
 
 .line {
@@ -225,5 +234,209 @@ input[type="text"] {
   opacity: 0;
   transform: translateY(10px);
   transition: all 500ms ease-in;
+}
+
+
+/* About */
+
+:root {
+  --container-bg-color: #333;
+  --left-bg-color: rgba(223, 39, 39, 0.7);
+  --left-button-hover-color: rgba(161, 11, 11, 0.3);
+  --right-bg-color: rgba(43, 43, 43, 0.8);
+  --right-button-hover-color: rgba(83, 51, 237, 0.2);
+  --hover-width: 75%;
+  --other-width: 25%;
+  --hover-height: 65%;
+  --other-height: 35%;
+  --speed: 1000ms;
+}
+
+.boxAbout {
+  margin: 0;
+  padding: 0; 
+  width: 100%;
+  height: 89vh;
+  overflow-x: hidden;
+} 
+
+.h1 {
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  transform: translateX(-50%);
+  white-space: nowrap;  /* programmer stay in same line with designer */
+}
+
+.button {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 15rem;
+  padding: 1.3rem;
+  text-align: center;
+  color: #fff;
+  border: #fff solid 0.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+
+.split.left .button:hover {
+  background-color: var(--left-button-hover-color);
+  border-color: var(--left-button-hover-color);
+}
+
+.split.right .button:hover {
+  background-color: var(--right-button-hover-color);
+  border-color: var(--right-button-hover-color);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--container-bg-color);
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  left: 0;
+  background: url('./images/split1.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.split.left:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: var(--left-bg-color);
+  opacity: .5;
+}
+
+.split.right {
+  right: 0;
+  background: url('./images/split2.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.split.right:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: var(--right-bg-color);
+  opacity: .5;
+}
+
+.split.left, .split.left:before, .split.right, .split.right:before {
+  transition: var(--speed) all ease-in-out; /* start and end slow */
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-left .right:before {
+  z-index: 2;
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.hover-right .left:before {
+  z-index: 2;
+}
+
+@media(max-width: 800px) {
+  .h1 {
+      font-size: 2rem;
+  }
+
+  .button {
+      width: 12rem;
+  }
+}
+
+@media(max-width: 600px) {
+  .h1 {
+      font-size: 2rem;
+  }
+
+  .button {
+      width: 12rem;
+  }
+
+  .split {
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+  }
+
+  .split.left {
+      left: 0;
+      top:0;
+      background: url('./images/split1.jpg') center center no-repeat;
+      background-size: cover;
+  }
+
+  .split.right {
+      right: 0;
+      bottom: 0;
+      background: url('./images/split2.jpg') center center no-repeat;
+      background-size: cover;
+  }
+
+  .hover-left .left {
+      height: var(--hover-height);
+      width: 100%;
+  }
+
+  .hover-left .right {
+      height: var(--other-height);
+      width: 100%;
+  }
+
+  .hover-right .right {
+      height: var(--hover-height);
+      width: 100%;
+  }
+
+  .hover-right .left {
+      height: var(--other-height);
+      width:100%;
+  }
+}
+
+@media(max-height: 600px) {
+  .button {
+      top: 70%;
+  }
 }
 
