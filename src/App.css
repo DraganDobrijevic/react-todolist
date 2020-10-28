@@ -7,7 +7,6 @@
 .App {
   font-family: Arial, Helvetica, sans-serif;
   background:#fff;
-  /* color: #005B96; */
   color: #231F20; 
   min-height: 100vh;
   width: 100%;
@@ -15,7 +14,6 @@
 }
 
 .header {
-  min-height: 10vh;
   background: #011F4B;
   color: #fff;
   text-align: center;
@@ -110,7 +108,7 @@ input[type="text"] {
   width: 40%;
   border-radius: 2rem;
   margin: 10px auto;
-  padding: 5rem;
+  padding: 3rem;
 }
 
 .todo {
@@ -118,7 +116,7 @@ input[type="text"] {
   color: #011f4b;
   border-radius: 1rem;
   margin: 1rem auto;
-  padding: .5rem 1.5rem;
+  padding: .5rem 2rem;
   width: 80%;
   position: relative;
 }
@@ -373,13 +371,103 @@ input[type="text"] {
   z-index: 2;
 }
 
+@media(max-width: 1500px) {
+  nav {
+    width: 25%;
+  }
+
+  .addTodo {
+    width: 60%;
+    margin: 5rem auto;
+    display: flex;
+  }
+
+  .todoList {
+    width: 60%;
+    padding: 2rem 1rem;
+  }
+
+  .todo {
+    padding: .5rem 3rem;
+    width: 80%;
+  }
+}
+
 @media(max-width: 800px) {
+  nav {
+    width: 35%;
+  }
+
   .h1 {
       font-size: 2rem;
   }
 
   .button {
       width: 12rem;
+  }
+
+  .addTodo {
+    width: 90%;
+  }
+
+  .todoList {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .todo {
+    padding: .5rem 3rem;
+    width: 90%;
+  }
+
+  .line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .line-1 {
+    z-index: 15;
+    opacity: .5;
+  }
+  
+  .line-2 {
+    z-index: 10;
+    opacity: .7;
+  }
+  
+  .line-3 {
+    z-index: 5;
+  }
+  
+  .wave {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 400%;
+    background-position: 0 bottom;
+    background-repeat: repeat no-repeat;
+    transform-origin: center bottom;
+  }
+  
+  .wave-1 {
+    background-image: url('./border-img/1.png');
+    background-size: 70% 50px;
+  }
+  
+  .wave-2 {
+    background-image: url('./border-img/2.png');
+    background-size: 50% 70px;
+    animation: animate 12s linear infinite;
+  }
+  
+  .wave-3 {
+    background-image: url('./border-img/3.png');
+    background-size: 50% 50px;
+    animation: animate 12s linear infinite;
   }
 }
 
@@ -390,6 +478,7 @@ input[type="text"] {
 
   .button {
       width: 12rem;
+      top: 70%;
   }
 
   .split {
@@ -434,9 +523,4 @@ input[type="text"] {
   }
 }
 
-@media(max-height: 600px) {
-  .button {
-      top: 70%;
-  }
-}
 
